@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio===</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>portfolio@mirindada</title>
     <style>
+        @keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
            .hover-effect {
         transition: transform 0.3s ease-in-out;
     }
@@ -224,13 +233,48 @@
     font-family: 'Optima', sans-serif;
     position: relative;">
     
+    <!-- Profile Section (Top-Left) -->
+    <div style="
+        position: absolute;
+        left: 20px; 
+        top: 15px;
+        text-align: left; 
+        display: flex; 
+        align-items: center;">
+        <img src="pic.jpg" alt="Vrindaa Sharma" style="
+            width: 80px; 
+            height: 80px; 
+            border-radius: 50%;
+            border: 2px solid white;
+            object-fit: cover;
+            margin-right: 10px;">
+        <p style="
+            color: white; 
+            margin: 0; 
+            font-size: 18px; 
+            font-weight: bold;">
+            Vrindaa Sharma
+        </p>
+    </div>
+
     <!-- Center Content -->
     <div style="text-align: center;">
-        <h1 style="margin: 0; font-size: 24px; font-weight: bold;">mirindada</h1>
+        <h1 id="animated-title" style="
+            margin: 0; 
+            font-size: 32px; 
+            font-weight: bold;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #ff8a00, #e52e71, #007BFF, #00ff99);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorShift 4s linear infinite, bounce 2s infinite alternate;">
+            mirindaaa
+        </h1>
         <nav>
             <ul style="display: flex; justify-content: center; list-style: none; padding: 0; margin-top: 5px;">
                 <li style="margin: 0 15px;"><a href="#about" style="color: white; text-decoration: none; font-size: 18px;">About</a></li>
-                <li style="margin: 0 15px;"><a href="#college-work" style="color: white; text-decoration: none; font-size: 18px;">College Work</a></li>
+                <li style="margin: 0 15px;"><a href="college.html" style="color: white; text-decoration: none; font-size: 18px;">College Work</a></li>
                 <li style="margin: 0 15px;"><a href="#contact" style="color: white; text-decoration: none; font-size: 18px;">Contact</a></li>
             </ul>
         </nav>
@@ -254,6 +298,7 @@
     </div>
 </header>
 
+
 <script>
 function updateDigitalClock() {
     let now = new Date();
@@ -270,12 +315,14 @@ updateDigitalClock();
    
     <section id="about">
         <h1 style="text-align: center;">About Me</h1>
-        <p style="font-size: 1.5em; font-family: 'Optima', sans-serif; text-align: center;">
-            Hello! I am Vrindaa Sharma, a passionate individual with a strong interest in <strong>cybersecurity, bug bounty, red teaming, and hacking</strong>. I have always been fascinated by the digital world and enjoy exploring its complexities. <br><br>
+        <p style="font-size: 1.5em; font-family: 'Optima', sans-serif; text-align: center;" >
+            Hello! I am Vrindaa Sharma, a passionate individual with a strong interest in <strong>cybersecurity, bug bounty, red teaming, and hacking</strong>. I have always been fascinated by the digital world and enjoy exploring its complexities. I am always eager to learn, grow, and push my boundaries in the ever-evolving world of cybersecurity. Whether it's uncovering vulnerabilities, conducting penetration tests, or diving deep into exploit development, I thrive on solving complex security challenges. <br><br>
     
-            Aside from my tech pursuits, I have a deep interest in becoming a <strong>civil servant</strong>. I believe in the power of bringing about positive change and helping others. This dual passion for both technology and societal impact is what drives me. <br><br>
+            Aside from my tech pursuits, I have a deep interest in becoming a <strong>civil servant</strong>.My aspiration to become a civil servant stems from my strong sense of duty and commitment to making a meaningful impact on society. I believe that true change comes from a combination of knowledge, action, and the drive to uplift others. I believe in the power of bringing about positive change and helping others. This dual passion for both technology and societal impact is what drives me. <br><br>
     
-            In my free time, I enjoy reading books, with one of my favorites being "<em>Don't Believe Everything You Think</em>" by Joseph Nguyen. This book resonates with my philosophy on the importance of mental clarity and being mindful of how we think.<br><br>
+            When I'm not immersed in security research or studying governance, I find solace in reading, writing, and self-reflection. Books, especially those on psychology and self-improvement, help me gain new perspectives on life. I believe that understanding how we think and perceive the world plays a crucial role in both personal and professional growth. I enjoy reading books, with one of my favorites being "<em>Don't Believe Everything You Think</em>" by Joseph Nguyen. This book resonates with my philosophy on the importance of mental clarity and being mindful of how we think.<br><br>
+
+            I am always open to new opportunities, collaborations, and conversations that align with my interests. If you share a passion for cybersecurity, governance, or simply want to exchange thoughts on books and philosophy, feel free to connect with me! 🚀<br><br>
         </p>
     </section>
 
@@ -337,100 +384,7 @@ updateDigitalClock();
             
     </section>
     <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-    <section id="college-work">
-        <h2 id="college-heading" style="
-            text-align: center; 
-            cursor: pointer; 
-            background-color: rgba(255, 255, 255, 0.1); 
-            color: white; 
-            padding: 10px; 
-            border-radius: 5px;
-            transition: background 0.3s ease-in-out;"
-            onclick="toggleCollegeWork()">
-            College Work <span id="arrow">▼</span>
-        </h2>
-    
-        <div id="college-content" style="
-            display: none; 
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;">
-            
-            <!-- Profile & College Info -->
-            <div style="
-                display: flex; 
-                justify-content: space-between; 
-                align-items: center; 
-                flex-wrap: wrap; 
-                padding: 20px;">
-    
-                <!-- Your Photo (Left) -->
-                <div style="text-align: center; flex: 1;">
-                    <img src="your-photo.jpg" alt="Vrindaa Sharma" style="
-                        width: 120px; 
-                        height: 120px; 
-                        border-radius: 50%;
-                        border: 3px solid white;
-                        object-fit: cover;">
-                    <p style="color: white; margin-top: 5px;"><strong>Vrindaa Sharma</strong></p>
-                </div>
-    
-                <!-- College Work Content (Center) -->
-                <div style="text-align: center; flex: 2;">
-                    <p>Here, I will showcase my projects, research papers, and other academic work related to cybersecurity.</p>
-                    <ul style="list-style-type: none; padding: 0;">
-                        <li>🔹 Research Paper on Web Security</li>
-                        <li>🔹 Penetration Testing Project</li>
-                        <li>🔹 Malware Analysis Report</li>
-                        <li>🔹 Network Security Presentation</li>
-                    </ul>
-                </div>
-    
-                <div style="
-                     position: absolute; 
-                     top: 20px; 
-                      right: 20px; 
-                     text-align: center;">
-                     <img src="https://www.addressguru.in/images/695528154.jpg" alt="GEHU Dehradun" style="
-                      width: 90%;  /* Slightly bigger */
-                      max-width: 250px; /* Increased max width */
-                       height: auto; 
-                       border-radius: 10px;
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);">
-    <p style="color: white; margin-top: 5px; font-size: 14px;">
-        <strong>Graphic Era Hill University, Dehradun</strong>
-    </p>
-</div>
-              
-    
-        </div>
-    </section>
-    
-    
-    <script>
-    function toggleCollegeWork() {
-        let content = document.getElementById("college-content");
-        let arrow = document.getElementById("arrow");
-    
-        if (content.style.display === "none" || content.style.opacity === "0") {
-            content.style.display = "block";
-            setTimeout(() => {
-                content.style.opacity = "1";
-                content.style.transform = "translateY(0)";
-            }, 50);
-            arrow.innerHTML = "▲";
-        } else {
-            content.style.opacity = "0";
-            content.style.transform = "translateY(-10px)";
-            setTimeout(() => {
-                content.style.display = "none";
-            }, 300);
-            arrow.innerHTML = "▼";
-        }
-    }
-    </script>
-    
-    
+
  <!--   <section id="projects">
         <h2>Projects</h2>
         <div class="project">
@@ -442,7 +396,23 @@ updateDigitalClock();
             <p>Description of project 2.</p>
         </div>
     </section>-->
-
+    <section id="resume" style="text-align: center; padding: 20px;">
+        <h2>Download My Resume</h2>
+        ▼<br>
+        <a href="resume.pdf" download="resume.pdf" style="
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: white;
+            background: #007BFF;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;">
+            Resume PDF
+        </a>
+    </section>
+    
     <section id="connect">
         <h2 style="text-align: center;">Connect with Me</h2>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">

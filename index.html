@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio@mirindada</title>
     <style>
+         .typewriter {
+            font-family: monospace;
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white; /* Cursor effect */
+            width: 0;
+            color: white;
+            background: black;
+            padding: 10px;
+            display: inline-block;
+            animation: typing 3s steps(20, end) forwards, blink 0.7s infinite;
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        /* Blinking Cursor Animation */
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        
+.lecture-content {
+    display: none;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
         @keyframes colorShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -274,8 +306,8 @@
         <nav>
             <ul style="display: flex; justify-content: center; list-style: none; padding: 0; margin-top: 5px;">
                 <li style="margin: 0 15px;"><a href="#about" style="color: white; text-decoration: none; font-size: 18px;">About</a></li>
-                <li style="margin: 0 15px;"><a href="college.html" style="color: white; text-decoration: none; font-size: 18px;">College Work</a></li>
-                <li style="margin: 0 15px;"><a href="#contact" style="color: white; text-decoration: none; font-size: 18px;">Contact</a></li>
+                <li style="margin: 0 15px;"><a href="#college-work" style="color: white; text-decoration: none; font-size: 18px;">College Work</a></li>
+                <li style="margin: 0 15px;"><a href="#connect" style="color: white; text-decoration: none; font-size: 18px;">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -385,17 +417,6 @@ updateDigitalClock();
     </section>
     <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
- <!--   <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of project 2.</p>
-        </div>
-    </section>-->
     <section id="resume" style="text-align: center; padding: 20px;">
         <h2>Download My Resume</h2>
         ▼<br>
@@ -413,8 +434,182 @@ updateDigitalClock();
         </a>
     </section>
     
+
+    <section id="college-work">
+    <h2 id="college-heading" style="
+    text-align: center; 
+    cursor: pointer; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: white; 
+    padding: 10px; 
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;"
+     >
+▼College Work <span id="arrow">▼</span>
+</h2>
+    <div id="college-content " style="
+        display: block;  
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        padding: 20px;">
+
+        <!-- Flexbox Container -->
+        <div style="
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            flex-wrap: wrap;">
+            
+            <div style="text-align: center; flex: 1; max-width: 30%;">
+                <img src="pic.jpg" alt="Vrindaa Sharma" style="
+                    width: 150px; 
+                    height: 150px; 
+                    border-radius: 50%;
+                    border: 3px solid white;
+                    object-fit: cover;">
+                <p style="color: white; margin-top: 5px; font-size: 18px;"><strong>Vrindaa Sharma</strong></p>
+            </div>
+
+            <!-- College Work Content (Center - 40%) -->
+            <div style="text-align: center; flex: 1.5; max-width: 40%;">
+                <p style="font-size: 16px;">Here, I will upload all the college work given including:</p>
+                <ul style="list-style-type: none; padding: 0; font-size: 16px;">
+                    <li>🔹 Lecture Learnings</li>
+                    <li>🔹 Profiling questions</li>
+                    <li>🔹 Assignment</li>
+                    <li>🔹 Resume</li>
+                </ul>
+            </div>
+
+            <!-- Graphic Era (Right - 30%) -->
+            <div style="text-align: center; flex: 1; max-width: 30%;">
+                <img src="https://www.addressguru.in/images/695528154.jpg" alt="GEHU Dehradun" style="
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);">
+                <p style="color: white; margin-top: 5px; font-size: 18px;">
+                    <strong>Graphic Era Hill University, Dehradun</strong>
+                </p> 
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="assignment-section" style="padding: 20px; color: white; text-align: center;">
+    <h2>Self-Introduction</h2>
+
+    <!-- Introduction Video -->
+    <div style="margin-bottom: 20px;">
+        <video width="50%" controls style="border-radius: 10px;">
+            <source src="introduction.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="font-size: x-large;"><strong>Lecture Learnings</strong></p>
+    </div>
+
+    <!-- Lecture Learnings -->
+    <div style="text-align: left; max-width: 800px; margin: auto;">
+        <div class="lecture">
+            <h3 onclick="toggleLecture('lecture1')" style="cursor: pointer; background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+                Lecture 1 ▼
+            </h3>
+            <div id="lecture1" class="lecture-content" style="font-size: large;">
+                <p>🔹 In first lecture of Practical For Employability Skills Enhancement i have learned about how to give a self introduction.</p>
+
+<p >🔹 What types of friends that we should make.</p>
+
+<p>🔹 I have learned about self growth and personality development.</p>
+
+<p>🔹 To not to give up in any situation.</p>
+
+<p>🔹 How to be a productive person in terms of health and wealth</p>
+            </div>
+        </div>
+
+        <div class="lecture">
+            <h3 onclick="toggleLecture('lecture2')" style="cursor: pointer; background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+                Lecture 2 ▼
+            </h3>
+            <div id="lecture2" class="lecture-content" style="font-size: large;">
+                <p>🔹 SWOC (Strength Weakness Opportunities Challenges) Analysis</p>
+                <p>🔹 Fun Activity where we had to draw and let our peers determine the word.</p>
+                <p>🔹 It helped us simplify complex words into simpler shapes.</p>
+            </div>
+        </div>
+
+        <div class="lecture">
+            <h3 onclick="toggleLecture('lecture3')" style="cursor: pointer; background: rgba(255, 255, 255, 0.1); padding: 10px; border-radius: 5px;">
+                Lecture 3▼
+            </h3>
+            <div id="lecture3" class="lecture-content" style="font-size: large;">
+                <p>In this lecture we learned about mastering presentation skills:-</p>
+                <p>🔹 Good speaking skills.</p>
+                <p>🔹 Develop your unique speaking skills.</p>
+                <p>🔹 Art of engaging with audience.</p>
+                <p>🔹 How to speak in public?</p>
+                <p>🔹 Good convincing skills.</p>
+                <p>🔹 Role of Body language.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Assignment Questions -->
+    <div style="margin-top: 20px;">
+        <h3 style="font-size: x-large;">Assignment Questions</h3>
+        <ul style="list-style-type: none; padding: 0; font-size: 16px;">
+            <li>1. What are the key principles of cybersecurity?</li>
+            <li>2. Explain the different phases of ethical hacking.</li>
+            <li>3. How do firewalls enhance network security?</li>
+            <li>4. Describe a common cyber attack and its mitigation.</li>
+        </ul>
+    </div>
+</section>
+
+<script>
+    function toggleLecture(id) {
+        let content = document.getElementById(id);
+        let heading = content.previousElementSibling;
+    
+        if (content.style.display === "none" || content.style.display === "") {
+            content.style.display = "block";
+            heading.innerHTML = heading.innerHTML.replace("▼", "▲");
+        } else {
+            content.style.display = "none";
+            heading.innerHTML = heading.innerHTML.replace("▲", "▼");
+        }
+    }
+ </script>
+ </section>
+ <!--   <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1</h3>
+            <p>Description of project 1.</p>
+        </div>
+        <div class="project">
+            <h3>Project 2</h3>
+            <p>Description of project 2.</p>
+        </div>
+    </section>-->
+    
     <section id="connect">
-        <h2 style="text-align: center;">Connect with Me</h2>
+        <h2 id="college-heading" style="
+        text-align: center; 
+        cursor: pointer; 
+        background-color: rgba(255, 255, 255, 0.1); 
+        color: white; 
+        padding: 10px; 
+        border-radius: 5px;
+        transition: background 0.3s ease-in-out;"
+         >
+    ▼Connect with me <span id="arrow">▼</span>
+    </h2>
         <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
             
             <!-- Podcast -->

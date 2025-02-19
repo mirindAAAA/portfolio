@@ -3,8 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio===</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+           .hover-effect {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .hover-effect:hover {
+        transform: scale(1.1); /* Increases size by 10% */
+    }
+        /* Global Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            background: url('https://images2.alphacoders.com/480/thumb-1920-480530.png') no-repeat center center fixed;
+            background-size: cover;
+            overflow-x: hidden;
+            border: 10px solid black;
+        }
+
+        /* Background Blur */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            filter: blur(5px); /* Adjust blur intensity */
+            z-index: -1; /* Ensures it's behind all content */
+        }
+
+        /* Header Styles */
+        header {
+            padding: 1rem;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        /* Navigation Styles */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+/*skills section*/
+         #skills {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 4rem 2rem;
+        }
+        #skills h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+        }
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .skill-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .skill-item h3 {
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+        .skill-item p {
+            font-size: 1rem;
+            color: #bbb;
+        }
+        /* Footer Styles */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            section p {
+                font-size: 0.9rem;
+                max-width: 90%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+
+            section p {
+                font-size: 0.8rem;
+                max-width: 90%;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
     <script>
         window.onload = function() {
             let splashScreen = document.createElement('div');
@@ -33,31 +205,233 @@
             
             setTimeout(() => {
                 splashScreen.style.display = 'none';
-            }, 500); // Adjust duration as needed
+            }, 200); // Adjust duration as needed
         };
     </script>
 </head>
 <body>
-    <img src="https://th.bing.com/th/id/OIP.xaUqFOnAu7w_Q_tPIpJnlAHaEK?rs=1&pid=ImgDetMain" alt="Profile Picture">
-        
-        
-    <header>
-        <h1>My Portfolio</h1>
+
+    
+    <header style="
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 15px 20px; 
+    background: rgba(255, 255, 255, 0.1);  /* Semi-transparent background */
+    backdrop-filter: blur(5px);  /* Blurred effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    color: white; 
+    font-family: 'Optima', sans-serif;
+    position: relative;">
+    
+    <!-- Center Content -->
+    <div style="text-align: center;">
+        <h1 style="margin: 0; font-size: 24px; font-weight: bold;">mirindada</h1>
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul style="display: flex; justify-content: center; list-style: none; padding: 0; margin-top: 5px;">
+                <li style="margin: 0 15px;"><a href="#about" style="color: white; text-decoration: none; font-size: 18px;">About</a></li>
+                <li style="margin: 0 15px;"><a href="#college-work" style="color: white; text-decoration: none; font-size: 18px;">College Work</a></li>
+                <li style="margin: 0 15px;"><a href="#contact" style="color: white; text-decoration: none; font-size: 18px;">Contact</a></li>
             </ul>
         </nav>
-    </header>
-    
+    </div>
+
+    <!-- Digital Clock (Fixed to the Right) -->
+    <div id="digital-clock" style="
+        position: absolute;
+        right: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Optima', sans-serif;
+        background: rgba(255, 255, 255, 0.1);
+        color: #aca998;
+        padding: 12px 18px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        text-align: center;
+        min-width: 100px;
+        box-shadow: 0 0 10px rgba(196, 194, 187, 0.5);
+        transition: all 0.3s ease;">
+    </div>
+</header>
+
+<script>
+function updateDigitalClock() {
+    let now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+    let seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById("digital-clock").innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateDigitalClock, 1000);
+updateDigitalClock();
+</script>
+
+   
     <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I am a passionate web developer with expertise in HTML, CSS, and JavaScript.</p>
+        <h1 style="text-align: center;">About Me</h1>
+        <p style="font-size: 1.5em; font-family: 'Optima', sans-serif; text-align: center;">
+            Hello! I am Vrindaa Sharma, a passionate individual with a strong interest in <strong>cybersecurity, bug bounty, red teaming, and hacking</strong>. I have always been fascinated by the digital world and enjoy exploring its complexities. <br><br>
+    
+            Aside from my tech pursuits, I have a deep interest in becoming a <strong>civil servant</strong>. I believe in the power of bringing about positive change and helping others. This dual passion for both technology and societal impact is what drives me. <br><br>
+    
+            In my free time, I enjoy reading books, with one of my favorites being "<em>Don't Believe Everything You Think</em>" by Joseph Nguyen. This book resonates with my philosophy on the importance of mental clarity and being mindful of how we think.<br><br>
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2 style="text-align: center;" style="font-size: 1.5em; font-family: 'Optima', sans-serif;">Skills</h2>
+        <div class="skills-list">
+            <!-- Skill 1 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/linux.svg" alt="HTML">
+                <h3>LINUX</h3>
+                <p>Being competent in Linux</p>
+            </div>
+            <!-- Skill 4 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/hashcracker.svg" alt="React">
+                <h3>Hashing</h3>
+                <p>great at cracking hashes</p>
+            </div>
+
+            <!-- Skill 2 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/ohsint.svg" alt="CSS">
+                <h3>Webbed</h3>
+                <p>Understands how the world wide web works</p>
+            </div>
+            <!-- Skill 3 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/owasptop10.svg" alt="OWASP Top 10">
+                <h3>OWASP Top 10</h3>
+                <p>Understanding every OWASP vulnerability</p>
+            </div>
+            
+            <!-- Skill 5 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/metasploit.svg" alt="Node.js">
+                <h3>Metasploitable</h3>
+                <p>Contains the knowledge to use Metasploit</p>
+            </div>
+            <!-- Skill 6 -->
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/networkfundamentals.svg" alt="Git">
+                <h3>networking</h3>
+                <p>profound knowledge of networking concepts</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://assets.tryhackme.com/img/badges/securityawareness.svg" alt="Git">
+                <h3>Security Awareness</h3>
+                <p>updated on the latest threats,vulns and tools</p>
+            </div>
+    
+
+            <div class="skill-item">
+                <img src="https://creatorspace.imgix.net/users/clyxyzrwo11l0vi010qrippms/vMlC4ltoy5KVep5N-isc2-candidate.png?w=750&h=750" alt="Git">
+                <h3>ISC2<sup>2</sup>
+                </h3>
+                <p>cybersecurity professional</p>   
+            </div>
+        </div> 
+            
+    </section>
+    <!----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+    <section id="college-work">
+        <h2 id="college-heading" style="
+            text-align: center; 
+            cursor: pointer; 
+            background-color: rgba(255, 255, 255, 0.1); 
+            color: white; 
+            padding: 10px; 
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;"
+            onclick="toggleCollegeWork()">
+            College Work <span id="arrow">▼</span>
+        </h2>
+    
+        <div id="college-content" style="
+            display: none; 
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;">
+            
+            <!-- Profile & College Info -->
+            <div style="
+                display: flex; 
+                justify-content: space-between; 
+                align-items: center; 
+                flex-wrap: wrap; 
+                padding: 20px;">
+    
+                <!-- Your Photo (Left) -->
+                <div style="text-align: center; flex: 1;">
+                    <img src="your-photo.jpg" alt="Vrindaa Sharma" style="
+                        width: 120px; 
+                        height: 120px; 
+                        border-radius: 50%;
+                        border: 3px solid white;
+                        object-fit: cover;">
+                    <p style="color: white; margin-top: 5px;"><strong>Vrindaa Sharma</strong></p>
+                </div>
+    
+                <!-- College Work Content (Center) -->
+                <div style="text-align: center; flex: 2;">
+                    <p>Here, I will showcase my projects, research papers, and other academic work related to cybersecurity.</p>
+                    <ul style="list-style-type: none; padding: 0;">
+                        <li>🔹 Research Paper on Web Security</li>
+                        <li>🔹 Penetration Testing Project</li>
+                        <li>🔹 Malware Analysis Report</li>
+                        <li>🔹 Network Security Presentation</li>
+                    </ul>
+                </div>
+    
+                <div style="
+                     position: absolute; 
+                     top: 20px; 
+                      right: 20px; 
+                     text-align: center;">
+                     <img src="https://www.addressguru.in/images/695528154.jpg" alt="GEHU Dehradun" style="
+                      width: 90%;  /* Slightly bigger */
+                      max-width: 250px; /* Increased max width */
+                       height: auto; 
+                       border-radius: 10px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);">
+    <p style="color: white; margin-top: 5px; font-size: 14px;">
+        <strong>Graphic Era Hill University, Dehradun</strong>
+    </p>
+</div>
+              
+    
+        </div>
     </section>
     
-    <section id="projects">
+    
+    <script>
+    function toggleCollegeWork() {
+        let content = document.getElementById("college-content");
+        let arrow = document.getElementById("arrow");
+    
+        if (content.style.display === "none" || content.style.opacity === "0") {
+            content.style.display = "block";
+            setTimeout(() => {
+                content.style.opacity = "1";
+                content.style.transform = "translateY(0)";
+            }, 50);
+            arrow.innerHTML = "▲";
+        } else {
+            content.style.opacity = "0";
+            content.style.transform = "translateY(-10px)";
+            setTimeout(() => {
+                content.style.display = "none";
+            }, 300);
+            arrow.innerHTML = "▼";
+        }
+    }
+    </script>
+    
+    
+ <!--   <section id="projects">
         <h2>Projects</h2>
         <div class="project">
             <h3>Project 1</h3>
@@ -67,11 +441,45 @@
             <h3>Project 2</h3>
             <p>Description of project 2.</p>
         </div>
-    </section>
+    </section>-->
+
+    <section id="connect">
+        <h2 style="text-align: center;">Connect with Me</h2>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            
+            <!-- Podcast -->
+            <div style="text-align: center; width: 200px;">
+                <a href="https://open.spotify.com/show/4GiJnv8f4a4ZR6Jc6TQJ3k?si=4773d930b603477a&nd=1&dlsi=7cd61074117f42f5" target="_blank">
+                    <img class="hover-effect" src="https://logodix.com/logo/1055214.png" alt="Podcast" style="width: 100%; border-radius: 10px;">
+                </a>
+                <p><strong>Podcast</strong></p>
+            </div>
     
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: example@example.com</p>
+            <!-- LinkedIn -->
+            <div style="text-align: center; width: 200px;">
+                <a href="https://www.linkedin.com/in/mirindada" target="_blank">
+                    <img class="hover-effect" src="https://www.seekpng.com/png/full/30-301979_logo-for-website-linkedin-logo-vector-free-download.png" alt="LinkedIn" style="width: 100%; border-radius: 10px;">
+                </a>
+                <p><strong>LinkedIn</strong></p>
+            </div>
+    
+            <!-- Email -->
+            <div style="text-align: center; width: 200px;">
+                <a href="mailto:divaa2629@gmail.com">
+                    <img class="hover-effect" src="https://th.bing.com/th/id/OIP.R1Lb6Xb0onZuoCght4MbMwHaHa?w=177&h=180&c=7&r=0&o=5&pid=1.7" alt="Email" style="width: 100%; border-radius: 10px;">
+                </a>
+                <p><strong>Email</strong></p>
+            </div>
+    
+            <!-- TryHackMe -->
+            <div style="text-align: center; width: 200px;">
+                <a href="https://tryhackme.com/p/mirindada" target="_blank">
+                    <img class="hover-effect" src="https://th.bing.com/th/id/OIP.DCNJRmo22QOYHZP56GoU8wAAAA?w=142&h=150&c=7&r=0&o=5&pid=1.7" alt="TryHackMe" style="width: 100%; border-radius: 10px;">
+                </a>
+                <p><strong>TryHackMe</strong></p>
+            </div>
+    
+        </div>
     </section>
     
     <footer>

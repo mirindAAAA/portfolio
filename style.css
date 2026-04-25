@@ -840,7 +840,8 @@ input[type="checkbox"]:checked ~ .hamburger-lines .line3{
 }
 
 .video-box {
-    display: none;
+    display: none;   /* THIS prevents autoplay on load */
+    position: relative;
     width: 80%;
     max-width: 900px;
 }

@@ -95,30 +95,37 @@ item.addEventListener('click', function () {
 });
 });
 
-function showVideo(id) {
-    // Hide all videos and reset them
+function toggleVideo(id) {
     document.querySelectorAll('.video-box').forEach(video => {
-        video.style.display = "none";
-
-        let iframe = video.querySelector("iframe");
-        iframe.src = ""; // reset every time
+        if (video.id !== id) {
+            video.style.display = "none";
+            let vid = video.querySelector("video");
+            vid.pause();
+            vid.currentTime = 0;
+        }
     });
 
-    // Show selected video
     let selected = document.getElementById(id);
-    selected.style.display = "block";
+    let video = selected.querySelector("video");
 
-    let iframe = selected.querySelector("iframe");
+    if (selected.style.display === "block") {
+        selected.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+    } else {
+        selected.style.display = "block";
+        video.play();
 
-    // Load video fresh every time
-    iframe.src = iframe.getAttribute("data-src") + "?autoplay=1";
+        // Mobile scroll fix
+        selected.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
 }
 
 function closeVideo() {
     document.querySelectorAll('.video-box').forEach(video => {
         video.style.display = "none";
-
-        let iframe = video.querySelector("iframe");
-        iframe.src = ""; // completely stop video
+        let vid = video.querySelector("video");
+        vid.pause();
+        vid.currentTime = 0;
     });
 }

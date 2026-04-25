@@ -94,3 +94,21 @@ item.addEventListener('click', function () {
     });
 });
 });
+function showVideo(id) {
+    // Hide all videos
+    document.querySelectorAll('.video-box').forEach(video => {
+        video.style.display = "none";
+    });
+
+    // Show selected video
+    document.getElementById(id).style.display = "block";
+}
+function closeVideo() {
+    document.querySelectorAll('.video-box').forEach(video => {
+        video.style.display = "none";
+
+        // Stop video when closed
+        let iframe = video.querySelector("iframe");
+        iframe.src = iframe.src;
+    });
+}

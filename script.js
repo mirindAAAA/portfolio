@@ -100,8 +100,15 @@ function showVideo(id) {
         video.style.display = "none";
     });
 
-    // Show selected video
-    document.getElementById(id).style.display = "block";
+    let selected = document.getElementById(id);
+    selected.style.display = "block";
+
+    let iframe = selected.querySelector("iframe");
+
+    // Load video only when clicked
+    if (!iframe.src) {
+        iframe.src = iframe.getAttribute("data-src");
+    }
 }
 function closeVideo() {
     document.querySelectorAll('.video-box').forEach(video => {

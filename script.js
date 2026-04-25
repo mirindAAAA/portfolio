@@ -94,28 +94,31 @@ item.addEventListener('click', function () {
     });
 });
 });
+
 function showVideo(id) {
-    // Hide all videos
+    // Hide all videos and reset them
     document.querySelectorAll('.video-box').forEach(video => {
         video.style.display = "none";
+
+        let iframe = video.querySelector("iframe");
+        iframe.src = ""; // reset every time
     });
 
+    // Show selected video
     let selected = document.getElementById(id);
     selected.style.display = "block";
 
     let iframe = selected.querySelector("iframe");
 
-    // Load video only when clicked
-    if (!iframe.src) {
-        iframe.src = iframe.getAttribute("data-src");
-    }
+    // Load video fresh every time
+    iframe.src = iframe.getAttribute("data-src") + "?autoplay=1";
 }
+
 function closeVideo() {
     document.querySelectorAll('.video-box').forEach(video => {
         video.style.display = "none";
 
-        // Stop video when closed
         let iframe = video.querySelector("iframe");
-        iframe.src = iframe.src;
+        iframe.src = ""; // completely stop video
     });
 }
